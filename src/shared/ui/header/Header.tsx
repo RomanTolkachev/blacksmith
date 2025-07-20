@@ -1,7 +1,11 @@
-import { FC } from "react";
+import { FC } from "react"
 
-export const Header: FC = () => {
+type Props = {
+    className?: string
+}
+
+export const Header: FC<Props> = ({ className }) => {
     return (
-        <header className="bg-amber-200 sticky top-0 h-12 z-100">я хедер</header>
+        <header className={`${className} transition-colors duration-300 w-full h-12`}>я хедер</header>
     )
 }

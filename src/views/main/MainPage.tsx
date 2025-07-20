@@ -8,7 +8,7 @@ import { About } from "./About";
 export const MainPage: FC = () => {
     return (
         <>
-            <section className={` h-[calc(100svh-3rem)] relative flex items-center justify-center sm:justify-start`}>
+            <section className={`relative h-svh flex items-center justify-center sm:justify-start`}>
                 <Background />
                 <MainForm className="max-w-xs h-fit min-h-80 ml-0 sm:ml-30" />
             </section>
