@@ -12,7 +12,7 @@ export const Header: FC<Props> = ({ className }) => {
     return (
         <header className={`${className} transition-colors duration-300 w-full sm:h-12 z-40 flex items-center sm:px-10`}>
             <NavigationMenu viewport={false} className="hidden sm:block">
-                <NavigationMenuList className="!text-foreground">
+                <NavigationMenuList className="!text-foreground [&_*]:!text-lg">
                     <NavigationMenuItem asChild>
                         <Link className="px-4" href='/'>
                             КорнеевКовка

@@ -6,6 +6,7 @@ type ListItem = {
 }
 
 type Props = {
+    className?: string
     data: {
         header: string
         list: ListItem[]
@@ -13,9 +14,9 @@ type Props = {
     }
 }
 
-export const BlockWithImage: FC<Props> = ({ data: { header, imgPath, list } }) => {
+export const BlockWithImage: FC<Props> = ({ data: { header, imgPath, list }, className }) => {
     return (
-        <article>
+        <article className={className}>
             <h2>{header}</h2>
             <div className="flex flex-col lg:flex-row justify-between">
                 <div className="p-4 h-60 sm:h-80 lg:order-2">
