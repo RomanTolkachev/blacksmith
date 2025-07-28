@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, PT_Serif } from "next/font/google";
+import { Geist, Geist_Mono, PT_Serif, Oswald } from "next/font/google";
+import localFont from 'next/font/local'
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,10 +13,23 @@ const geistMono = Geist_Mono({
     subsets: ["latin"],
 });
 
+const oswald = Oswald({
+    variable: "--font-oswald",
+    weight: ["200", '300', '400', '500', '600', '700'],
+    subsets: ['cyrillic']
+})
+
 const ptSerif = PT_Serif({
     variable: "--font-pt-serif",
     weight: ["400", "700"],
     subsets: ['cyrillic']
+})
+
+const gothic = localFont({
+    src: [{
+        path: '..\\public\\fonts\\goth.woff2'
+    }],
+    variable: '--font-gothic'
 })
 
 export const metadata: Metadata = {
@@ -31,7 +45,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} ${ptSerif.variable} antialiased dark`}
+                className={`${geistSans.variable} ${geistMono.variable} ${ptSerif.variable} ${oswald.variable} ${gothic.variable} antialiased dark`}
             >
                 {children}
             </body>

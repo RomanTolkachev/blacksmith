@@ -2,6 +2,6 @@ import { FC } from "react";
 
 export const Footer: FC = () => {
     return (
-        <footer className="bg-blue-200">я футер</footer>
+        <footer className=" h-22 sm:h-12">я футер</footer>
     )
 }

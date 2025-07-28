@@ -1,6 +1,6 @@
 "use client"
 
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/shared/ui/carousel/carousel';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/shared/ui/carousel/carousel_shadcn';
 import Autoplay from 'embla-carousel-autoplay';
 import { FC, useRef } from 'react';
 import { CaraouselItemInner } from './CarouselItemInner';

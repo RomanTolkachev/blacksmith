@@ -30,7 +30,7 @@ export const ClientHeaderWrapper: FC<Props> = ({ className }) => {
     return (
         <AnimatePresence mode="wait">
             {isScrolled && (
-                <motion.div {...motionProps} className="fixed top-0 w-full z-100">
+                <motion.div {...motionProps} className="fixed top-0 w-full z-40">
                     <Header className={`${className}`} />
                 </motion.div>
             )}
