@@ -3,151 +3,29 @@ layout: base.njk
 title: Blacksmith - Professional Metalwork Services
 description: Professional blacksmith services with over 20 years of experience
 ---
+<header>
 
-<!-- Hero Section -->
-<section class="relative h-screen flex items-center justify-center sm:justify-start">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" style="background-image: url('/main_bg_better_2.webp')"></div>
-    <div class="relative z-10 max-w-xs h-fit min-h-80 ml-0 sm:ml-30 bg-black/80 p-8 rounded-lg">
-        <h1 class="text-white text-2xl font-bold mb-6">Кузнечные работы</h1>
-        <form class="space-y-4">
-            <div>
-                <label class="block text-white text-sm font-medium mb-2">Имя</label>
-                <input type="text" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label class="block text-white text-sm font-medium mb-2">Телефон</label>
-                <input type="tel" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-            </div>
-            <div>
-                <label class="block text-white text-sm font-medium mb-2">Сообщение</label>
-                <textarea rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-            </div>
-            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition duration-200">
-                Отправить заявку
-            </button>
-        </form>
-    </div>
+    <nav>
+        <a href="/">    <svg width="200" height="48">
+        <text x="40" y="35" fill="white" class="heavy">
+        КорнеевКовка
+        </text>
+    </svg></a>
+        <a href="/services">Изделия</a>
+        <a href="/contact">Контакты</a>
+        <a href="/about">О нас</a>
+    </nav>
+</header>
+
 </section>
 
-<!-- Gallery Section -->
-<section class="py-10 max-sm:px-5">
-    <h2 class="font-gothic text-4xl font-black text-center mb-10">Наши работы</h2>
-    <div class="carousel lg:max-w-5xl sm:max-w-xl xs:max-w-3xl max-w-sm mx-auto">
-        <div class="carousel-container overflow-hidden">
-            <div class="carousel-slides flex transition-transform duration-300">
-                <div class="carousel-slide min-w-full">
-                    <img src="/balcony.webp" alt="Балконные работы" class="w-full h-80 object-cover rounded-lg">
-                </div>
-                <div class="carousel-slide min-w-full">
-                    <img src="/mangaly.webp" alt="Мангалы" class="w-full h-80 object-cover rounded-lg">
-                </div>
-                <div class="carousel-slide min-w-full">
-                    <img src="/perilla.webp" alt="Перила" class="w-full h-80 object-cover rounded-lg">
-                </div>
-                <div class="carousel-slide min-w-full">
-                    <img src="/vorota.webp" alt="Ворота" class="w-full h-80 object-cover rounded-lg">
-                </div>
-            </div>
-        </div>
-        <div class="carousel-controls flex justify-center mt-4 space-x-2">
-            <button class="carousel-prev bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">←</button>
-            <button class="carousel-next bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-700">→</button>
-        </div>
-    </div>
-</section>
-
-<!-- About Section -->
-<section class="lg:max-w-5xl max-w-sm mx-auto max-sm:px-5">
-    <!-- Team Section -->
-    <div class="mb-16">
-        <h2 class="font-gothic text-4xl font-black text-center mb-10">Наша команда</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-                <img src="/farrier-1.png" alt="Наша команда" class="w-full rounded-lg">
-            </div>
-            <div class="space-y-6">
-                <div class="border-l-4 border-blue-600 pl-4">
-                    <h3 class="font-bold text-xl">Команда из 10 опытных кузнецов</h3>
-                    <p class="text-gray-600">Чьи руки превращают металл в искусство</p>
-                </div>
-                <div class="border-l-4 border-blue-600 pl-4">
-                    <h3 class="font-bold text-xl">Талантливые дизайнеры</h3>
-                    <p class="text-gray-600">Которые продумывают каждую деталь</p>
-                </div>
-                <div class="border-l-4 border-blue-600 pl-4">
-                    <h3 class="font-bold text-xl">Профессиональные замерщики</h3>
-                    <p class="text-gray-600">Чтобы изделия идеально вписывались в ваш интерьер</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Services Table -->
-    <div class="mb-16">
-        <h2 class="font-gothic text-4xl font-black text-center mb-10">Наши услуги</h2>
-        <div class="overflow-x-auto">
-            <table class="w-full border-collapse border border-gray-300">
-                <thead>
-                    <tr class="bg-gray-100">
-                        <th class="border border-gray-300 px-4 py-2 text-left">Услуга</th>
-                        <th class="border border-gray-300 px-4 py-2 text-left">Описание</th>
-                        <th class="border border-gray-300 px-4 py-2 text-left">Цена</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Ворота</td>
-                        <td class="border border-gray-300 px-4 py-2">Кованые ворота любой сложности</td>
-                        <td class="border border-gray-300 px-4 py-2">От 50,000 руб</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Перила</td>
-                        <td class="border border-gray-300 px-4 py-2">Лестничные и балконные перила</td>
-                        <td class="border border-gray-300 px-4 py-2">От 15,000 руб</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Мангалы</td>
-                        <td class="border border-gray-300 px-4 py-2">Садовые мангалы и барбекю</td>
-                        <td class="border border-gray-300 px-4 py-2">От 25,000 руб</td>
-                    </tr>
-                    <tr>
-                        <td class="border border-gray-300 px-4 py-2">Решетки</td>
-                        <td class="border border-gray-300 px-4 py-2">Оконные и дверные решетки</td>
-                        <td class="border border-gray-300 px-4 py-2">От 8,000 руб</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- Why Us Section -->
-    <div class="mb-16">
-        <h2 class="font-gothic text-4xl font-black text-center mb-10">Почему мы?</h2>
-        <div class="grid md:grid-cols-2 gap-8 items-center">
-            <div class="space-y-6">
-                <div class="border-l-4 border-green-600 pl-4">
-                    <h3 class="font-bold text-xl">Работаем с 2000 года</h3>
-                    <p class="text-gray-600">Знаем металл как свои пять пальцев</p>
-                </div>
-                <div class="border-l-4 border-green-600 pl-4">
-                    <h3 class="font-bold text-xl">Самый широкий спектр услуг</h3>
-                    <p class="text-gray-600">От классики до авангарда</p>
-                </div>
-                <div class="border-l-4 border-green-600 pl-4">
-                    <h3 class="font-bold text-xl">Индивидуальный подход</h3>
-                    <p class="text-gray-600">Ваш заказ будет уникальным</p>
-                </div>
-            </div>
-            <div>
-                <img src="/farrier-2.png" alt="Почему мы" class="w-full rounded-lg">
-            </div>
-        </div>
-    </div>
-
-    <!-- Quote -->
-    <article class="pt-4 border-t">
-        <blockquote class="text-lg italic text-center">
-            "Обратитесь к нам — и металл заговорит на языке красоты!"
-        </blockquote>
-    </article>
-</section>
+<style>
+    body {
+        background-image: url("public/main_bg_better_2.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        height: 100vh;
+    }
+</style>
