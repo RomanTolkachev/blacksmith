@@ -8,8 +8,8 @@ declare global {
     }
 }
 
+import { IConfig } from "@/shared/ui/yandex-map/ui/model";
 import { FC, useEffect } from "react";
-import { IConfig } from "./model";
 
 type Props = {
     config: IConfig

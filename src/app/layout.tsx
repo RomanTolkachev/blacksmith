@@ -26,9 +26,7 @@ const ptSerif = PT_Serif({
 })
 
 const gothic = localFont({
-    src: [{
-        path: '..\\public\\fonts\\goth.woff2'
-    }],
+    src: '../../public/fonts/goth.woff2',
     variable: '--font-gothic'
 })
 

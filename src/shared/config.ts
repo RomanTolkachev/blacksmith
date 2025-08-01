@@ -1,6 +1,6 @@
 import { ReactNode } from "react"
 
-type TGalleryItem = { src: string, width: number, height: number }
+export type TGalleryItem = { src: string, width: number, height: number }
 
 export type DataItem = {
     name: string

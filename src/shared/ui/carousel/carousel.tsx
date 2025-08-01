@@ -19,7 +19,7 @@ export const CarouselComp: FC<Props> = ({ className, imagesData, height, hoverSc
                     <CarouselItem key={key} className={`2xl:basis-1/3 lg:basis-1/2 pl-10 h-${height} relative`}>
                         <Card className="relative h-full w-full group cursor-pointer overflow-hidden">
                             <CardContent className="absolute inset-0 w-full">
-                                <Link href={`${slide}`}>
+                                <Link href={`${slide.split('/').pop()?.replace(/\..*$/, "") || ""}`}>
                                     <Image
                                         src={slide}
                                         style={{

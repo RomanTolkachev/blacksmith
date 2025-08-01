@@ -1,2 +1,2 @@
 export * from "./carousel_shadcn";
-export { CarouselComp as Carousel } from "./carousel"
+export { CarouselComp as Carousel } from "./Carousel"
