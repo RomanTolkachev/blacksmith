@@ -18,7 +18,7 @@ export const MobileSelect: FC<Props> = ({currentValue, values}) => {
 
     return (
         <Select value={currentValue} onValueChange={nextValue => router.push(`${nextValue}`)}>
-            <SelectTrigger className="w-80">
+            <SelectTrigger className="w-full">
                 <SelectValue placeholder="Выберете значение" />
             </SelectTrigger>
             <SelectContent>

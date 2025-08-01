@@ -24,10 +24,10 @@ const Page: FC<Props> = async ({ params }) => {
     return (
         <>
             <Sidebar className="hidden lg:px-10 md:flex" items={services} />
-            <div className="md:hidden pt-5 pl-5 ">
+            <div className="md:hidden px-4 mb-2">
                 <MobileSelect values={routes} currentValue={service} />
             </div>
-            <div className="overflow-hidden h-full w-full no-scrollbar mx-auto p-5">
+            <div className="overflow-hidden h-full w-full no-scrollbar mx-auto max-sm:px-2 px-5">
                 <div className="max-h-full w-full overflow-y-auto mx-auto red-scrollbar">
                     <Gallery images={serviceData.galleryPaths} />
                 </div>

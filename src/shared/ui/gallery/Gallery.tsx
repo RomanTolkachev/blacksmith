@@ -10,7 +10,7 @@ type Props = {
 
 export const Gallery: FC<Props> = ({ images }) => {
     return (
-        <ul className="h-full !w-full p-5 min-h-max mx-auto sm:max-w-md max-[830px]:max-w-[400px] min-[1100px]:max-w-[700px] lg:max-w-xl md:columns-2 xl:max-w-3xl 2xl:max-w-5xl lg:columns-2 2xl:columns-3 gap-4 space-y-4">
+        <ul className="h-full w-full p-2 min-h-max mx-auto sm:max-w-md max-[830px]:max-w-[400px] min-[1100px]:max-w-[700px] lg:max-w-xl md:columns-2 xl:max-w-3xl 2xl:max-w-5xl lg:columns-2 2xl:columns-3 gap-4 space-y-4">
             {images.map((img) => (
                 <li
                     key={img.src}

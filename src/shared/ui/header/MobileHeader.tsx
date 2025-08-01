@@ -18,7 +18,7 @@ export const MobileHeader: FC = () => {
                 </SheetTrigger>
                 <SheetContent onOpenAutoFocus={(e) => e.preventDefault()} className="px-10" side="right">
                     <DialogTitle className='hidden' />
-                    <Accordion collapsible type="single" className="pt-20 [&_button]:!text-xl [&_svg]:text-muted-foreground [&_button]:text-chart-3">
+                    <Accordion collapsible type="single" className="pt-20 [&_button]:!text-xl [&_div]:text-muted-foreground [&_svg]:text-muted-foreground [&_button]:text-foreground">
                         <AccordionItem className="flex justify-between items-center" value="item-1">
                             <AccordionTrigger className="[&_>svg]:hidden">
                                 Позвонить
