@@ -1,11 +1,11 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
+import { SmoothImage } from './SmoothImage'
 
-type Image = { src: string, width: number, height: number }
+export type TImage = { src: string, width: number, height: number }
 
 type Props = {
-    images: Image[]
+    images: TImage[]
 }
 
 export const Gallery: FC<Props> = ({ images }) => {
@@ -15,19 +15,9 @@ export const Gallery: FC<Props> = ({ images }) => {
                 <li
                     key={img.src}
                     className="relative w-full rounded-lg overflow-hidden transition-all duration-300 ring-0 sm:hover:ring-3 ring-chart-3 hover:shadow-md"
-                    style={{aspectRatio: img.width / img.height}}
                 >
                     <Link href={`/services/${img.src.replace(/\..*$/, "")}`}>
-                        <Image
-                            src={img.src}
-                            fill
-                            className="object-cover "
-                            alt=""
-                            sizes="(max-width: 768px) 100vw, 28vw"
-                            style={{
-                                aspectRatio: `${img.width}/${img.height}`,
-                            }}
-                        />
+                        <SmoothImage image={img} />
                     </Link>
                 </li>
             ))}
