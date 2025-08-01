@@ -20,9 +20,6 @@ const Page: FC<Props> = async ({ params }) => {
     }
 
     const routes: Record<string, string> = Object.fromEntries(services.map(service => [service.href, service.name]))
-    const currentValue = routes[service]
-
-    console.log({routes, текущее: service})
 
     return (
         <>

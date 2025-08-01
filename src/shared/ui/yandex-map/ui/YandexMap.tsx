@@ -10,7 +10,6 @@ declare global {
 
 import { FC, useEffect } from "react";
 import { IConfig } from "./model";
-import { Skeleton } from "../../skeleton";
 
 type Props = {
     config: IConfig

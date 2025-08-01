@@ -1,6 +1,6 @@
 import { FC } from "react";
 import Image from 'next/image'
-import { Card, CardContent, CardHeader } from "./card";
+import { Card, CardContent } from "./card";
 import { TCarouselItemData } from "./model";
 import { PT_Serif } from "next/font/google";
 

@@ -1,6 +1,5 @@
 import { FC } from "react";
 import { ClientMap } from "@/widgets/client-ymap";
-import { BlockWithImage } from "@/shared/ui/block-with-image/BlockWithImage";
 
 const Page: FC = () => {
 
