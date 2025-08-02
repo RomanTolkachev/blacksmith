@@ -1,0 +1,122 @@
+<header class="bg-gray-900 text-white shadow-lg">
+
+    <nav class="header-nav">
+        <a href="/" class="flex items-center">
+            <svg width="200" height="48">
+                <text x="40" y="35" fill="white" class="heavy font-bold text-xl">
+                    КорнеевКовка
+                </text>
+            </svg>
+        </a>
+
+        <div class="flex items-center space-x-8">
+            <details>
+                <summary class="flex items-center space-x-1 px-3 py-2 rounded hover:bg-gray-800 transition-colors cursor-pointer list-none">
+                    <span>Изделия</span>
+                    <svg class="transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </summary>
+
+                <!-- Dropdown Menu -->
+                <nav class="dropdown-menu">
+                    {% for service in services %}
+                        <a href="/services/{{ service.href }}">{{ service.name }}</a>
+                    {% endfor %}
+                </nav>
+            </details>
+
+            <a href="/contact" class="px-3 py-2 rounded hover:bg-gray-800 transition-colors">Контакты</a>
+            <a href="/about" class="px-3 py-2 rounded hover:bg-gray-800 transition-colors">О нас</a>
+        </div>
+    </nav>
+</header>
+<style>
+    .header-nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 64px;
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .flex {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+    }
+
+    details {
+        position: relative;
+
+        summary {
+            list-style: none;
+
+            &::-webkit-details-marker {
+                display: none;
+            }
+
+            svg {
+                transition: transform 0.2s ease-in-out;
+            }
+
+            &:focus {
+                outline: 2px solid #f97316;
+                outline-offset: 2px;
+            }
+        }
+
+        &[open] summary svg {
+            transform: rotate(180deg);
+        }
+
+        &:focus-within {
+            outline: none;
+        }
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin-top: 0.25rem;
+        width: 16rem;
+        background-color: #374151;
+        border-radius: 0 0 0.5rem 0.5rem;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        z-index: 50;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        a {
+            display: block;
+            padding: 0.5rem 1rem;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+
+            &:hover,
+            &:focus {
+                background-color: #f97316;
+                color: white;
+                outline: none;
+            }
+
+            &:first-child {
+                border-radius: 0.5rem 0.5rem 0 0;
+            }
+
+            &:last-child {
+                border-radius: 0 0 0.5rem 0.5rem;
+            }
+        }
+    }
+</style>

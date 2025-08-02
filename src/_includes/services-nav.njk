@@ -1,0 +1,66 @@
+<nav class="services-navigation">
+    <div class="services-nav-container">
+        <a href="/services/" class="nav-link {% if page.url == '/services/' %}active{% endif %}">
+            Все услуги
+        </a>
+        {% for service in services %}
+        <a href="/services/{{ service.href }}/" 
+           class="nav-link {% if page.url == '/services/' + service.href + '/' %}active{% endif %}">
+            {{ service.name }}
+        </a>
+        {% endfor %}
+    </div>
+</nav>
+
+<style>
+.services-navigation {
+    background-color: rgba(0, 0, 0, 0.9);
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+    padding: 1rem 0;
+}
+
+.services-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: #ccc;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: 'Gothic', serif;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.nav-link:hover {
+    color: #FFD700;
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.nav-link.active {
+    color: #FFD700;
+    background-color: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .services-nav-container {
+        padding: 0 1rem;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-link {
+        white-space: nowrap;
+        min-width: max-content;
+    }
+}
+</style> 

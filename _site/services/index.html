@@ -4,11 +4,11 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-            {% if title %}
-                {{ title }}{% else %}Blacksmith{% endif %}
+            
+                Blacksmith - Services
         </title>
         <meta
-        name="description" content="{% if description %}{{ description }}{% else %}Professional blacksmith services{% endif %}"> <!-- Google Fonts -->
+        name="description" content="Professional blacksmith services with over 20 years of experience"> <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link
@@ -21,8 +21,35 @@
         <link rel="stylesheet" href="https://unpkg.com/@yandex/ymaps3-default-ui-theme@latest/dist/esm/index.css">
     </head>
     <body class="antialiased dark bg-background text-foreground">
-        {% include "header.njk" %}
-        {{ content | safe }}
+        <header>
+            <nav>
+                <a href="/">
+                    <svg width="200" height="48">
+                        <text x="40" y="35" fill="white" class="heavy">
+                            КорнеевКовка
+                        </text>
+                    </svg>
+                </a>
+                <a href="/services">Изделия</a>
+                <a href="/contact">Контакты</a>
+                <a href="/about">О нас</a>
+            </nav>
+        </header>
+        
+<section>
+</section>
+
+<style>
+    body {
+        background-image: url("public/main_bg_better_2.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        color: white;
+        height: 100vh;
+    }
+</style>
+
         <!-- Embla Carousel JS -->
         <script src="https://unpkg.com/embla-carousel@8.6.0/embla-carousel.umd.js"></script>
         <script src="https://unpkg.com/embla-carousel-autoplay@8.6.0/embla-carousel-autoplay.umd.js"></script>

@@ -1,0 +1,175 @@
+---
+layout: base.njk
+title: КорнеевКовка - Все услуги
+description: Полный каталог кованых изделий от мастера с 20-летним опытом
+---
+
+<div class="services-index">
+
+
+    <main class="services-grid">
+        <div class="container">
+            <div class="services-list">
+                {% for service in services %}
+                <article class="service-card">
+                    <div class="service-card-image">
+                        {% if service.galleryPaths and service.galleryPaths.length > 0 %}
+                        <img src="{{ service.galleryPaths[0].src }}" 
+                             alt="{{ service.name }}"
+                             loading="lazy"
+                             width="{{ service.galleryPaths[0].width }}"
+                             height="{{ service.galleryPaths[0].height }}">
+                        {% endif %}
+                    </div>
+                    <div class="service-card-content">
+                        <h2 class="service-card-title">{{ service.name }}</h2>
+                        <p class="service-card-description">{{ service.description }}</p>
+                        <div class="service-card-meta">
+                            <span class="service-card-count">{{ service.galleryPaths.length }} фото</span>
+                        </div>
+                        <a href="/services/{{ service.href }}/" class="service-card-link">
+                            Смотреть работы →
+                        </a>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </main>
+</div>
+
+<style>
+.services-index {
+    min-height: 100vh;
+    background-color: #000;
+    color: white;
+}
+
+.services-header {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
+    padding: 4rem 0 2rem;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.services-title {
+    font-family: 'Gothic', serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #FFD700;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    max-width: 600px;
+}
+
+.services-grid {
+    padding: 3rem 0;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+}
+
+.service-card-image {
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-card-image img {
+    transform: scale(1.05);
+}
+
+.service-card-content {
+    padding: 1.5rem;
+}
+
+.service-card-title {
+    font-family: 'Gothic', serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #FFD700;
+}
+
+.service-card-description {
+    color: #ccc;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.service-card-meta {
+    margin-bottom: 1.5rem;
+}
+
+.service-card-count {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.service-card-link {
+    display: inline-block;
+    color: #FFD700;
+    text-decoration: none;
+    font-family: 'Gothic', serif;
+    font-weight: bold;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #FFD700;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.service-card-link:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .services-list {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .service-card-content {
+        padding: 1rem;
+    }
+}
+</style> 

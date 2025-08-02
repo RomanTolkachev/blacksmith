@@ -4,6 +4,7 @@ module.exports = function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("public");
   eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/styles");
   
   // Add plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
@@ -12,9 +13,10 @@ module.exports = function(eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "_site",
+      output: "dist",
       includes: "_includes",
       layouts: "_layouts",
+      styles: "styles",
       data: "_data"
     },
     templateFormats: ["md", "njk", "html"],
