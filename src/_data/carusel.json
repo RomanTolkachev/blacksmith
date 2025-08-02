@@ -1,0 +1,27 @@
+[
+    {
+        "header": "Балконы",
+        "img": "/assets/balcony.jpg",
+        "link": "balcony"
+    },
+    {
+        "header": "Ворота",
+        "img": "/assets/vorota.webp",
+        "link": "vorota"
+    },
+    {
+        "header": "Реставрация",
+        "img": "/assets/restavraciya.jpg",
+        "link": "restavraciya"
+    },
+    {
+        "header": "Мангалы",
+        "img": "/assets/mangaly.webp",
+        "link": "mangaly"
+    },
+    {
+        "header": "Перилла",
+        "img": "/assets/perilla.webp",
+        "link": "perilla"
+    }
+]

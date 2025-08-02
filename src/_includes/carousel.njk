@@ -1,0 +1,274 @@
+<section class="carousel-section">
+    <h2 >Наши работы</h2>
+    <div class="carousel-container">
+        <button class="carousel-control prev" onclick="prevSlide(this)">
+            {% include "../assets/icons/arrow.svg" %}
+        </button>
+        <div class="carousel">
+            {% for item in carusel %}
+            <div class="carousel-item">
+                <div class="carousel-content">
+                    <div class="carousel-image-container">
+                        <img src="{{ item.img }}" alt="{{ item.header }}" class="carousel-image">
+                    </div>
+                    <div class="carousel-label">
+                        <p>{{ item.header }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control next" onclick="nextSlide(this)">
+            {% include "../assets/icons/arrow.svg" %}
+        </button>
+    </div>
+</section>
+
+<style>
+
+
+    .carousel-section {
+        padding: 4rem 2rem;
+        background: #1a1a1a;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+
+
+        .carousel-container {
+            position: relative;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            background: #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+
+            .carousel {
+                display: flex;
+                gap: 20px;
+                flex: 1;
+                overflow: hidden;
+
+                .carousel-item {
+                    flex: 1 0 33.333%;
+                    min-height: 350px;
+                    transition: all 0.3s ease;
+
+                    .carousel-content {
+                        position: relative;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        background: #2a2a2a;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+                        .carousel-image-container {
+                            position: relative;
+                            flex: 1;
+                            overflow: hidden;
+
+                            .carousel-image {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                                display: block;
+                            }
+                        }
+
+                        .carousel-label {
+                            padding: 1rem;
+                            text-align: center;
+                            background: #2a2a2a;
+                            border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+                            h3 {
+                                font-family: 'Goth', serif;
+                                font-size: 1.1rem;
+                                font-weight: 400;
+                                color: white;
+                                margin: 0;
+                                letter-spacing: 0.5px;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                }
+            }
+
+            button.carousel-control {
+                width: 56px;
+                height: 56px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                border: 1px solid var(--foreground);
+                border-radius: 50%;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                backdrop-filter: blur(10px);
+                outline: none;
+                flex-shrink: 0;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                    stroke: currentColor;
+                    transition: all 0.3s ease;
+                }
+
+                &.next svg {
+                    transform: rotate(180deg);
+                }
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.9);
+                    border-color: rgba(255, 255, 255, 0.4);
+                    transform: scale(1.1);
+
+                    svg {
+                        stroke: white;
+                    }
+                }
+            }
+        }
+    }
+
+    /* Adaptive Design - Based on the article approach */
+    @media (max-width: 1024px) {
+        .carousel-section .carousel-container .carousel .carousel-item {
+            flex: 1 0 50%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .carousel-section {
+            padding: 3rem 1rem;
+
+
+            .carousel-container {
+                padding: 15px;
+                gap: 15px;
+
+                .carousel {
+                    gap: 15px;
+
+                    .carousel-item {
+                        flex: 1 0 100%;
+
+                        .carousel-content {
+                            .carousel-label {
+                                padding: 0.8rem;
+
+                                h3 {
+                                    font-size: 1rem;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                button.carousel-control {
+                    width: 48px;
+                    height: 48px;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 576px) {
+        .carousel-section {
+            padding: 2rem 0.5rem;
+
+            .carousel-title {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .carousel-container {
+                padding: 10px;
+                gap: 10px;
+
+                .carousel {
+                    gap: 10px;
+
+                    .carousel-item .carousel-content {
+                        .carousel-label h3 {
+                            font-size: 0.9rem;
+                        }
+                    }
+                }
+
+                button.carousel-control {
+                    width: 40px;
+                    height: 40px;
+
+                    svg {
+                        width: 18px;
+                        height: 18px;
+                    }
+                }
+            }
+        }
+    }
+</style>
+
+<script>
+    // Minimal carousel functions based on the article approach
+    const nextSlide = (event) => {
+        const slider = event.parentNode.children[1];
+        slider.append(slider.children[0]);
+    }
+
+    const prevSlide = (event) => {
+        const slider = event.parentNode.children[1];
+        slider.prepend(slider.children[slider.children.length - 1]);
+    }
+
+    // Auto-slide functionality
+    let autoSlideInterval;
+
+    const startAutoSlide = () => {
+        autoSlideInterval = setInterval(() => {
+            const nextButton = document.querySelector('.carousel-control.next');
+            if (nextButton) {
+                nextSlide(nextButton);
+            }
+        }, 3000);
+    };
+
+    const stopAutoSlide = () => {
+        if (autoSlideInterval) {
+            clearInterval(autoSlideInterval);
+        }
+    };
+
+    // Start auto-slide and pause on hover
+    document.addEventListener('DOMContentLoaded', () => {
+        startAutoSlide();
+        
+        const carouselContainer = document.querySelector('.carousel-container');
+        if (carouselContainer) {
+            carouselContainer.addEventListener('mouseenter', stopAutoSlide);
+            carouselContainer.addEventListener('mouseleave', startAutoSlide);
+        }
+    });
+</script> 
