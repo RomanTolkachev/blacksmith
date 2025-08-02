@@ -9,14 +9,21 @@ description: Professional blacksmith services with over 20 years of experience
         <h1>Профессиональные услуги кузнеца</h1>
         <p>С более чем 20-летним опытом работы, мы предлагаем широкий спектр кузнечных услуг, включая изготовление уникальных изделий на заказ.</p>
         <p>Свяжитесь с нами для получения консультации и оценки вашего проекта.</p>
+        <form>
+            <button type="submit">Связаться</button>
+        </form>
     </div>
 </section>
 
 {% include "carousel.njk" %}
+<section class="hero">
+{% include "our-team.njk" %}
+</section>
 
 <style>
-    body {
-        background-image: url("/main_bg_better_2.webp");
+    .hero {
+       
+        background-image: url("./assets/main_bg_better_2.webp");
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -25,18 +32,10 @@ description: Professional blacksmith services with over 20 years of experience
         min-height: 100vh;
         margin: 0;
         font-family: 'PT Serif', serif;
+        padding-top: 5rem
     }
 
-    .hero {
-        padding: 4rem 2rem;
-        text-align: center;
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(10px);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    
 
     .hero-content {
         max-width: 800px;

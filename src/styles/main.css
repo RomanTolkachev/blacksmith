@@ -105,9 +105,7 @@ article {
     margin-bottom: 2.5rem;
 }
 
-p {
-    font-size: 1.25rem;
-}
+
 
 .no-scrollbar::-webkit-scrollbar-track {
     background: #f30b0b;
