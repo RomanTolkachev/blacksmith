@@ -25,7 +25,9 @@ const Page: FC<Props> = async ({ params }) => {
     }
 
     return (
-        <Photo photo={foundGalleryItem} />
+        <div className="max-full">
+            <Photo photo={foundGalleryItem} />
+        </div>
     )
 }
 

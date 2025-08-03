@@ -99,7 +99,7 @@ export const YandexMap: FC<Props> = ({ config }) => {
     return (
         <div
             id="map-container"
-            className="rounded-md overflow-hidden"
+            className="overflow-hidden"
             style={{
                 height: "100%",
                 width: "100%",

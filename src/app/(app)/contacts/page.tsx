@@ -19,10 +19,10 @@ const Page: FC = () => {
     ]
 
     return (
-        <div className="h-full w-full overflow-hidden grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 2xl:grid-cols-[1fr_2fr] place-items-center">
-            <article className="mb-0">
-                <h2 className="h-fit text-center">Контакты</h2>
-                <ul className="space-y-3 m-auto w-fit">
+        <div className="h-full w-full relative overflow-hidden grid grid-rows-[1fr_2fr] grid-cols-1 md:grid-rows-1 md:grid-cols-2 2xl:grid-cols-[1fr_2fr] place-items-center">
+            <article className="mb-0 max-md:absolute bottom-0 left-0 z-20 bg-background w-full md:w-fit pt-3 px-5">
+                <h2 className="h-fit text-center max-sm:!mb-2 max-md:hidden">Контакты</h2>
+                <ul className="space-y-1 md:space-y-3 m-auto max-sm:mb-2 ">
                     {list.map((item, key) => (
                         <li key={key} className="flex items-start">
                             <div className="flex-1">
@@ -33,7 +33,7 @@ const Page: FC = () => {
                     ))}
                 </ul>
             </article>
-            <div className="w-full h-full"><ClientMap /></div>
+            <div className="w-full h-full max-md:absolute inset-0 z-10 md:rounded-xl overflow-hidden"><ClientMap /></div>
         </div>
     )
 }

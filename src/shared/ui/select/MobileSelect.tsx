@@ -13,9 +13,6 @@ export const MobileSelect: FC<Props> = ({currentValue, values}) => {
 
     const router = useRouter()
 
-    console.log({currentValue, values})
-
-
     return (
         <Select value={currentValue} onValueChange={nextValue => router.push(`${nextValue}`)}>
             <SelectTrigger className="w-full">

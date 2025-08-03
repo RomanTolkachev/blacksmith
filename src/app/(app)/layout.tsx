@@ -8,7 +8,7 @@ const Layout: FC<PropsWithChildren<{modal: ReactNode}>> = async ({ children, mod
 
     return (
         <div className="grid grid-rows-[auto_1fr_auto]">
-            <Header className="bg-transparent -mb-22 sm:-mb-12" />
+            <Header className="bg-transparent -mb-22 md:-mb-12" />
             <ClientHeaderWrapper className="bg-background md:border-b-1 md:border-b-muted-foreground" />
             <main>
                 {children}

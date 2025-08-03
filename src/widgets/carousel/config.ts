@@ -5,27 +5,27 @@ export const CarouselData: TCarouselItemData[] = [
     {
         header: "Балконы",
         img: "/balcony.jpg",
-        link: "balcony"
+        link: "/services/balconies"
     },
     {
         header: "Ворота",
         img: "/vorota.webp",
-        link: "vorota"
+        link: "/services/gates"
     },
     {
         header: "Реставрация",
         img: "/restavraciya.jpg",
-        link: "restavraciya"
+        link: "/services/restoration"
     },
     {
         header: "Мангалы",
         img: "/mangaly.webp",
-        link: "mangaly"
+        link: "/services/grills"
     },
     {
         header: "Перилла",
         img: "/perilla.webp",
-        link: "perilla"
+        link: "/services/railings"
     },
 
 ]
