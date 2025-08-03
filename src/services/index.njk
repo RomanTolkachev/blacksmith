@@ -5,8 +5,6 @@ description: Полный каталог кованых изделий от ма
 ---
 
 <div class="services-index">
-
-
     <main class="services-grid">
         <div class="container">
             <div class="services-list">
@@ -14,7 +12,7 @@ description: Полный каталог кованых изделий от ма
                 <article class="service-card">
                     <div class="service-card-image">
                         {% if service.galleryPaths and service.galleryPaths.length > 0 %}
-                        <img src="{{ service.galleryPaths[0].src }}" 
+                        <img src="{{ service.galleryPaths[0].src }}"
                              alt="{{ service.name }}"
                              loading="lazy"
                              width="{{ service.galleryPaths[0].width }}"
@@ -172,4 +170,4 @@ description: Полный каталог кованых изделий от ма
         padding: 1rem;
     }
 }
-</style> 
+</style>

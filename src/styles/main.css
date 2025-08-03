@@ -6,7 +6,11 @@
     font-display: swap;
 }
 
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 /* CSS Variables */
 :root {
     --font-geist-sans: 'Geist', sans-serif;

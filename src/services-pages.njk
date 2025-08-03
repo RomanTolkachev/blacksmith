@@ -9,39 +9,34 @@ permalink: "services/{{ service.href }}/index.html"
 title: "{{ service.name }} - КорнеевКовка"
 description: "{{ service.description }}"
 ---
-
     <div class="services-page">
-
         <div class="content-wrapper">
-            <!-- Left Sidebar -->
             <aside class="services-sidebar">
                 <nav class="services-nav">
                     {% for serviceItem in services %}
-                    <a href="/services/{{ serviceItem.href }}/" 
+                    <a href="/services/{{ serviceItem.href }}/"
                        class="service-link {% if serviceItem.href == service.href %}active{% endif %}">
                         {{ serviceItem.name }}
                     </a>
                     {% endfor %}
                 </nav>
-                
-                <!-- Decorative Blacksmith Illustration -->
                 <div class="blacksmith-illustration">
                    <img src="/assets/farrier-3.png" width="120" height="120" alt="Blacksmith Illustration">
                 </div>
             </aside>
 
-            <!-- Main Content Area -->
             <main class="services-content">
-                <!-- Service Gallery -->
                 <div class="gallery-container">
                     <div class="gallery-grid">
                         {% for image in service.galleryPaths %}
-                        <div class="gallery-item">
-                            <img src="{{ image.src }}" 
-                                 alt="{{ service.name }} - {{ loop.index }}" 
+                        <div class="gallery-item" onclick="this.requestFullscreen()">
+                            <img src="{{ image.src }}"
+                                 alt="{{ service.name }} - {{ loop.index }}"
                                  loading="lazy"
                                  width="{{ image.width }}"
-                                 height="{{ image.height }}">
+                                 height="{{ image.height }}"
+                                 style="max-width: 100%; max-height: 100%; object-fit: contain;"
+                            >
                         </div>
                         {% endfor %}
                     </div>
@@ -74,77 +69,7 @@ body {
     position: relative;
 }
 
-/* Main Header */
-.main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
-    background-color: rgba(0, 0, 0, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    height: 60px;
-}
 
-.main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-    height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.logo {
-    color: white;
-    text-decoration: none;
-    font-family: 'Gothic', serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.logo:hover {
-    color: #FFD700;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-}
-
-.nav-link {
-    color: white;
-    text-decoration: none;
-    font-family: 'Gothic', serif;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.nav-link:hover {
-    color: #FFD700;
-}
-
-.nav-link svg {
-    transition: transform 0.3s ease;
-}
-
-.nav-link:hover svg {
-    transform: rotate(180deg);
-}
-
-/* Content Layout */
-.services-page {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
 
 .content-wrapper {
     display: flex;
@@ -210,17 +135,20 @@ body {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
+    grid-template-rows: masonry;
+     grid-auto-flow: dense;
 }
 
 .gallery-item {
     position: relative;
     border-radius: 12px;
     overflow: hidden;
-    aspect-ratio: 4/3;
+    {# aspect-ratio: 4/3; #}
     background-color: rgba(255, 255, 255, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: contain;
 }
 
 .gallery-item:hover {
@@ -231,7 +159,6 @@ body {
 .gallery-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -304,4 +231,4 @@ body {
     0%, 100% { opacity: 1; }
     50% { opacity: 0.5; }
 }
-</style> 
+</style>

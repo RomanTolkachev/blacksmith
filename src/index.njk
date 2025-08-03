@@ -16,13 +16,10 @@ description: Professional blacksmith services with over 20 years of experience
 </section>
 
 {% include "carousel.njk" %}
-<section class="hero">
 {% include "our-team.njk" %}
-</section>
 
 <style>
     .hero {
-       
         background-image: url("./assets/main_bg_better_2.webp");
         background-size: cover;
         background-position: center;
@@ -81,3 +78,9 @@ description: Professional blacksmith services with over 20 years of experience
         }
     }
 </style>
+<script>
+    const header = document.getElementsByTagName('header')[0];
+    if(header){
+        header.style.height = 0;
+    }
+</script>
