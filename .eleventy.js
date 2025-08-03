@@ -1,14 +1,14 @@
-const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+import { EleventyHtmlBasePlugin } from "@11ty/eleventy";
 
-module.exports = function(eleventyConfig) {
+export default function(eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("public");
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/styles");
-  
+
   // Add plugins
   eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
-  
+
   // Set directories
   return {
     dir: {
@@ -23,4 +23,4 @@ module.exports = function(eleventyConfig) {
     markdownTemplateEngine: "njk",
     htmlTemplateEngine: "njk"
   };
-};
+}
