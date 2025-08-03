@@ -32,9 +32,10 @@
     </nav>
 </header>
 <style>
-    header{
-        position: sticky;
-        top: 0;
+header{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     .header-nav {
         margin: 0 auto;
         padding: 0 1rem;
@@ -42,14 +43,14 @@
         align-items: center;
         justify-content: space-between;
         min-height: 64px;
-         border-bottom: 2px solid black;
-         background: rgba(0,0,0,0.5);
-         z-index: 1000;
-         position: relative;
-        a {
-            text-decoration: none;
-            color: white;
-        }
+        border-bottom: 2px solid black;
+        background: rgba(0,0,0,0.5);
+        z-index: 1000;
+        position: relative;
+            a {
+                text-decoration: none;
+                color: white;
+            }
 
         .flex {
             display: flex;
@@ -89,7 +90,7 @@
 
     .dropdown-menu {
         position: absolute;
-          z-index: 1000;
+        z-index: 1000;
         top: 100%;
         left: 0;
         margin-top: 0.25rem;
@@ -124,5 +125,5 @@
             }
         }
     }
-    }
+}
 </style>
